@@ -26,6 +26,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { L } from 'harmony-language';
+
 
 const Section: React.FC<{
   title: string;
@@ -71,12 +73,12 @@ const App = () => {
         style={backgroundStyle}>
         <Header />
         <View
+          testID={'main-view'}
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+            {L.help()}
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />

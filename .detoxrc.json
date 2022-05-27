@@ -1,0 +1,78 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "skipLegacyWorkersInjection": true,
+  "artifacts": {
+    "rootDir": "e2e/artifacts",
+    "plugins": {
+      "instruments": {
+        "enabled": false
+      },
+      "log": {
+        "enabled": true
+      },
+      "screenshot": {
+        "shouldTakeAutomaticSnapshots": true
+      }
+    }
+  },
+  "devices": {
+    "iphone11": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 11"
+      }
+    },
+    "iphone13": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 13"
+      }
+    },
+    "iphone8": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 8 Plus"
+      }
+    },
+    "ipadpro": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPad Pro (12.9-inch) (4th generation)"
+      }
+    }
+  },
+  "apps": {
+    "ios.debug": {
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/MyApp.app",
+      "build": "xcodebuild -workspace ios/MyApp.xcworkspace -scheme MyApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
+    }
+  },
+  "configurations": {
+    "ios.sim.iphone11": {
+      "device": "iphone11",
+      "apps": [
+        "ios.debug"
+      ]
+    },
+    "ios.sim.iphone13": {
+      "device": "iphone13",
+      "apps": [
+        "ios.debug"
+      ]
+    },
+    "ios.sim.iphone8": {
+      "device": "iphone8",
+      "apps": [
+        "ios.debug"
+      ]
+    },
+    "ios.sim.ipadpro": {
+      "device": "ipadpro",
+      "apps": [
+        "ios.debug"
+      ]
+    }
+  }
+}
